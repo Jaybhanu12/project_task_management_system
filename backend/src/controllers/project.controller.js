@@ -95,9 +95,9 @@ export const updateProject = AsyncHandler(async (req, res) => {
     const { projectId } = req.params;
     const { title, description, startDate, endDate, projectManager, teamMembers, status } = req.body;
 
-    if (req.user.role !== "Admin") {
-        return res.status(403).json({ message: "Unauthorized: Only Admin can update projects." });
-    }
+    // if (req.user.role !== "Admin") {
+    //     return res.status(403).json({ message: "Unauthorized: Only Admin can update projects." });
+    // }
 
     const project = await Project.findById(projectId);
     if (!project) {
